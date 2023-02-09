@@ -1,0 +1,58 @@
+.container {
+  @apply flex items-center justify-between bg-white px-4 py-3 sm:px-6;
+}
+
+.small {
+  @apply flex flex-1 justify-between sm:hidden;
+}
+
+.smallPrev {
+  @apply relative inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50;
+}
+.smallNext {
+  @apply relative ml-3 inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50;
+}
+
+.large {
+  @apply hidden sm:flex sm:flex-1 sm:items-center sm:justify-between;
+}
+
+.large nav {
+  @apply isolate inline-flex -space-x-px rounded-md shadow-sm;
+}
+
+.results {
+  @apply text-sm text-gray-700;
+}
+
+.results span {
+  @apply font-medium;
+}
+
+.page {
+  @apply relative inline-flex items-center border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-50 focus:z-20;
+}
+
+/* .pageNearEllipsis {
+  @apply relative hidden items-center border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-50 focus:z-20 md:inline-flex;
+}
+
+.ellipsis {
+  @apply relative inline-flex items-center border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700;
+} */
+
+.pageCurrent {
+  @apply relative z-10 inline-flex items-center border border-blue-500 bg-blue-50 px-4 py-2 text-sm font-medium text-blue-600 focus:z-20;
+}
+
+.prev {
+  @apply relative inline-flex items-center rounded-l-md border border-gray-300 bg-white px-2 py-2 text-sm font-medium text-gray-500 hover:bg-gray-50 focus:z-20;
+}
+
+.next {
+  @apply relative inline-flex items-center rounded-r-md border border-gray-300 bg-white px-2 py-2 text-sm font-medium text-gray-500 hover:bg-gray-50 focus:z-20;
+}
+
+.icon {
+  @apply h-5 w-5;
+}
