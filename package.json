@@ -1,6 +1,7 @@
 {
   "name": "@dmitrydyomin/nextutils",
-  "version": "1.0.2",
+  "private": false,
+  "version": "1.0.3",
   "description": "Tools for a building a Next.js app",
   "source": "src/index.ts",
   "main": "dist/main.js",
