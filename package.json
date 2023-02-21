@@ -1,7 +1,9 @@
 {
   "name": "@dmitrydyomin/nextutils",
-  "private": false,
-  "version": "1.0.3",
+  "publishConfig": {
+    "access": "public"
+  },
+  "version": "1.0.4",
   "description": "Tools for a building a Next.js app",
   "source": "src/index.ts",
   "main": "dist/main.js",
