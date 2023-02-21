@@ -5,7 +5,7 @@ import { PaginationProps, usePagination } from './usePagination';
 
 import styles from './Pagination.module.css';
 
-export const Pagination: React.FC<PaginationProps> = props => {
+export const Pagination: React.FC<PaginationProps> = (props) => {
   const { prev, next, pages, results } = usePagination(props);
 
   return (
@@ -35,7 +35,7 @@ export const Pagination: React.FC<PaginationProps> = props => {
                 <ChevronLeftIcon className={styles.icon} aria-hidden="true" />
               </Link>
 
-              {pages.map(p => (
+              {pages.map((p) => (
                 <Link
                   aria-current={p.current ? 'page' : undefined}
                   className={p.current ? styles.pageCurrent : styles.page}

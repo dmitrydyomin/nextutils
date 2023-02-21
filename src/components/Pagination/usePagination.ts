@@ -10,7 +10,7 @@ export const parsePage = (page: string, total: number, pageSize: number) => {
 };
 
 const range = (from: number, till: number) =>
-  Array.from(Array(till - from).keys()).map(k => k + from);
+  Array.from(Array(till - from).keys()).map((k) => k + from);
 
 const getPageRange = (page: number, pageCount: number, buttonCount = 10) => {
   let first = Math.max(page - Math.floor(buttonCount / 2), 1);
@@ -41,7 +41,7 @@ export const usePagination = ({ page, pageSize, total }: PaginationProps) => {
 
   const pageRange = useMemo(
     () => getPageRange(page, pageCount, 10),
-    [page, pageCount],
+    [page, pageCount]
   );
 
   const altNav = useCallback(
@@ -50,12 +50,12 @@ export const usePagination = ({ page, pageSize, total }: PaginationProps) => {
       if (nextPage !== page) {
         push(
           `${pathname || '/'}?${new URLSearchParams(
-            nextPage === 1 ? query : ({ ...query, page: nextPage } as any),
-          ).toString()}`,
+            nextPage === 1 ? query : ({ ...query, page: nextPage } as any)
+          ).toString()}`
         );
       }
     },
-    [page, pageCount, pathname, push, query],
+    [page, pageCount, pathname, push, query]
   );
 
   useAltArrows(altNav);
@@ -74,7 +74,7 @@ export const usePagination = ({ page, pageSize, total }: PaginationProps) => {
     pages:
       pageCount < 2
         ? null
-        : pageRange.map(p => ({
+        : pageRange.map((p) => ({
             current: p === page,
             href: { pathname, query: { ...query, page: p } },
             page: p,
