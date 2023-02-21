@@ -2,7 +2,7 @@ import Cookies from 'cookies';
 import { IncomingMessage, ServerResponse } from 'http';
 
 export interface CookieSessionConfig {
-  cookieName: 'wr.f';
+  cookieName: string;
   keys: string[];
   maxAge: number;
 }
@@ -17,7 +17,7 @@ export class CookieSession {
   setSessionId(
     req: IncomingMessage,
     res: ServerResponse,
-    sessionId: number | null,
+    sessionId: string | null,
     remember: boolean
   ) {
     const { cookieName, maxAge } = this.config;
@@ -25,7 +25,7 @@ export class CookieSession {
     if (sessionId === null) {
       cookies.set(cookieName);
     }
-    cookies.set(cookieName, sessionId ? sessionId.toString() : null, {
+    cookies.set(cookieName, sessionId, {
       maxAge: remember ? maxAge : undefined,
       signed: true,
     });
@@ -33,8 +33,6 @@ export class CookieSession {
 
   getSessionId(req: IncomingMessage, res: ServerResponse) {
     const cookies = this.initCookies(req, res);
-    const id = cookies.get(this.config.cookieName, { signed: true });
-    const parsed = id ? parseInt(id) : Number.NaN;
-    return Number.isNaN(parsed) ? null : parsed;
+    return cookies.get(this.config.cookieName, { signed: true });
   }
 }
