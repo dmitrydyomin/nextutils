@@ -3,7 +3,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Tools for a building a Next.js app",
   "source": "src/index.ts",
   "main": "dist/main.js",
@@ -14,6 +14,9 @@
     "build": "parcel build",
     "export": "npm run build && npm version patch --force && npm publish"
   },
+  "files": [
+    "/dist/**/*"
+  ],
   "keywords": [],
   "author": "Dmitry Dyomin <dma01x@gmail.com>",
   "license": "UNLICENSED",
