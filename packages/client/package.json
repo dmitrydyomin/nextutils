@@ -1,5 +1,5 @@
 {
-  "name": "@dmitrydyomin/nextutils",
+  "name": "@nextutils/client",
   "publishConfig": {
     "access": "public"
   },
@@ -21,27 +21,15 @@
   "author": "Dmitry Dyomin <dma01x@gmail.com>",
   "license": "UNLICENSED",
   "devDependencies": {
-    "@parcel/packager-ts": "^2.8.3",
-    "@parcel/transformer-typescript-types": "^2.8.3",
-    "@types/bcryptjs": "^2.4.2",
-    "@types/cookies": "^0.7.7",
-    "@types/http-errors": "^2.0.1",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
-    "@types/request-ip": "^0.0.37",
-    "parcel": "latest",
-    "tailwindcss": "^3.2.7",
-    "typescript": "^4.9.5"
+    "tailwindcss": "^3.2.7"
   },
   "dependencies": {
     "@heroicons/react": "^2.0.16",
-    "bcryptjs": "^2.4.3",
-    "cookies": "^0.8.0",
-    "http-errors": "^2.0.0",
     "next": "^13.1.6",
     "react": "^18.2.0",
     "react-toastify": "^9.1.1",
-    "request-ip": "^3.3.0",
     "swr": "^2.0.3"
   }
 }

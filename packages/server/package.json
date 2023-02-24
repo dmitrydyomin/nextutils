@@ -1,0 +1,36 @@
+{
+  "name": "@nextutils/server",
+  "publishConfig": {
+    "access": "public"
+  },
+  "version": "1.0.9",
+  "description": "Tools for a building a Next.js app",
+  "source": "src/index.ts",
+  "main": "dist/main.js",
+  "module": "dist/module.js",
+  "types": "dist/types.d.ts",
+  "scripts": {
+    "watch": "parcel watch",
+    "build": "parcel build",
+    "export": "npm run build && npm version patch --force && npm publish"
+  },
+  "files": [
+    "/dist/**/*"
+  ],
+  "keywords": [],
+  "author": "Dmitry Dyomin <dma01x@gmail.com>",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.2",
+    "@types/cookies": "^0.7.7",
+    "@types/http-errors": "^2.0.1",
+    "@types/request-ip": "^0.0.37"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookies": "^0.8.0",
+    "http-errors": "^2.0.0",
+    "next": "^13.1.6",
+    "request-ip": "^3.3.0"
+  }
+}
