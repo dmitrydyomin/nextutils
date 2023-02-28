@@ -1,5 +1,5 @@
 import { isHttpError } from 'http-errors';
-import { NextApiResponse } from 'next';
+import type { NextApiResponse } from 'next';
 
 export const catchHttpError = (err: unknown, res: NextApiResponse) => {
   if (isHttpError(err)) {

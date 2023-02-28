@@ -1,6 +1,6 @@
 import { IncomingMessage, ServerResponse } from 'http';
 import createHttpError from 'http-errors';
-import {
+import type {
   GetServerSideProps,
   GetServerSidePropsContext,
   GetServerSidePropsResult,
