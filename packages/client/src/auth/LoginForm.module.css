@@ -1,0 +1,35 @@
+.container {
+  @apply space-y-6;
+}
+
+.label {
+  @apply block text-sm font-medium text-gray-700;
+}
+
+.inputContainer {
+  @apply mt-1;
+}
+
+.input {
+  @apply block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm;
+}
+
+.row {
+  @apply flex items-center justify-between;
+}
+
+.rowItem {
+  @apply flex items-center;
+}
+
+.checkbox {
+  @apply h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500;
+}
+
+.checkboxLabel {
+  @apply ml-2 block text-sm text-gray-900;
+}
+
+.submit {
+  @apply flex w-full justify-center rounded-md border border-transparent bg-blue-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2;
+}
