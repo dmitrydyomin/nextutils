@@ -1,4 +1,4 @@
-import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import { useRouter } from 'next/router';
 import { useCallback, useMemo } from 'react';
 
 import { useAltArrows } from './useAltArrows';
@@ -30,14 +30,7 @@ export interface PaginationProps {
 export const usePagination = ({ page, pageSize, total }: PaginationProps) => {
   const pageCount = Math.ceil(total / pageSize);
 
-  const pathname = usePathname();
-  const { push } = useRouter();
-  const searchParams = useSearchParams();
-  const query = useMemo(() => {
-    const res = Object.fromEntries(searchParams.entries());
-    delete res.page;
-    return res;
-  }, [searchParams]);
+  const { pathname, push, query } = useRouter();
 
   const pageRange = useMemo(
     () => getPageRange(page, pageCount, 10),

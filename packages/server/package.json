@@ -3,15 +3,13 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "1.0.9",
+  "version": "1.0.12",
   "description": "Tools for a building a Next.js app",
   "source": "src/index.ts",
-  "main": "dist/main.js",
-  "module": "dist/module.js",
+  "module": "dist/index.js",
   "types": "dist/types.d.ts",
   "scripts": {
-    "watch": "parcel watch",
-    "build": "parcel build",
+    "build": "tsc",
     "export": "npm run build && npm version patch --force && npm publish"
   },
   "files": [
@@ -21,10 +19,12 @@
   "author": "Dmitry Dyomin <dma01x@gmail.com>",
   "license": "UNLICENSED",
   "devDependencies": {
+    "@parcel/packager-ts": "^2.8.3",
     "@types/bcryptjs": "^2.4.2",
     "@types/cookies": "^0.7.7",
     "@types/http-errors": "^2.0.1",
-    "@types/request-ip": "^0.0.37"
+    "@types/request-ip": "^0.0.37",
+    "parcel": "^2.8.3"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
