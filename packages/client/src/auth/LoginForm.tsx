@@ -1,5 +1,3 @@
-'use client';
-
 import { FormEventHandler, useCallback, useState } from 'react';
 
 export interface LoginFormValues {
