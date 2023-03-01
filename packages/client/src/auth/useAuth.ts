@@ -7,7 +7,12 @@ import { apiReq, useAPI } from '../api/useAPI';
 import { checkResponseOK } from '../api/errorMessage';
 import type { LoginFormValues } from './LoginForm';
 
-export function useAuth<T extends {}>() {
+export interface UseAuthOptions {
+  loginURL?: string;
+  loggedInURL?: string;
+}
+
+export function useAuth<T extends {}>(options?: UseAuthOptions) {
   const { data: user, error, mutate } = useAPI<T | undefined>('/auth');
   const { mutate: mutateOther } = useSWRConfig();
   const { push, query } = useRouter();
@@ -32,7 +37,9 @@ export function useAuth<T extends {}>() {
         );
       }
       mutate();
-      push(typeof redirect === 'string' ? redirect : '/');
+      push(
+        typeof redirect === 'string' ? redirect : options?.loggedInURL || '/'
+      );
     },
     [mutate, push, redirect]
   );
@@ -42,7 +49,7 @@ export function useAuth<T extends {}>() {
       const res = await apiReq('/auth', { method: 'DELETE' });
       await checkResponseOK(res);
       mutate();
-      push('/login');
+      push(options?.loginURL || '/login');
     } catch (err: any) {
       toast.error(err.message);
     }

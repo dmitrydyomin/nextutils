@@ -27,11 +27,21 @@ export interface AuthProvider<U extends { id: string }, C extends {}> {
   validateCredentials(data: any): C & { remember: boolean };
 }
 
+export interface AuthOptions {
+  loginURL?: string;
+  loggedInURL?: string;
+}
+
 export class Auth<U extends { id: string }, C extends {}> {
+  private options;
+
   constructor(
     private provider: AuthProvider<U, C>,
-    private cookies: CookieSession
-  ) {}
+    private cookies: CookieSession,
+    options?: AuthOptions
+  ) {
+    this.options = options || {};
+  }
 
   async login(
     req: IncomingMessage,
@@ -90,9 +100,9 @@ export class Auth<U extends { id: string }, C extends {}> {
         return {
           redirect: {
             statusCode: 302,
-            destination: `/login${
+            destination: `${this.options.loginURL || '/login'}${
               !context.req.url ||
-              context.req.url === '/' ||
+              context.req.url === (this.options.loggedInURL || '/') ||
               context.req.url.endsWith('.json')
                 ? ''
                 : `?redirect=${encodeURIComponent(context.req.url)}`
